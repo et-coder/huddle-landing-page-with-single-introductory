@@ -15,29 +15,37 @@
 body {
     font-family: 'Open-sans', sans-serif;
     background: url('images/bg-mobile.svg') no-repeat;
+    background-size: contain;
     background-color: var(--violet);
 }
 
 .logo {
     display: inline-block;
     width: 130px;
-    margin: 0;
+    margin-top: 1em;
 }
 
 .container {
     max-width: 350px;
-    padding: 1.25em;
     margin: 0 auto;
+    padding: 0 1em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.illustration {
+    width: 100%;
+    margin-top: 3.8em;
 }
 
 .content {
     text-align: center;
     color: #fff;
-}
-
-.illustration {
-    width: 100%;
-    margin: 3.8em 0;
+    margin-bottom: 3em;
 }
 
 h1 {
@@ -49,7 +57,6 @@ h1 {
 .description {
     font-weight: 300;
     margin: 1em 0 1.3em;
-    padding: 0 .5em;
     line-height: 1.5;
 }
 
@@ -68,12 +75,16 @@ button:hover {
     cursor: pointer;
 }
 
-.socials {
-    margin-top: 4em;
+footer {
+    text-align: center;
 }
 
+.socials {
+    text-decoration: none;
+    list-style-type: none;
+}
 
-.socials span {
+.socials li {
     position: relative;
     display: inline-block;
     text-decoration: none;
@@ -87,23 +98,123 @@ button:hover {
 
 .socials i {
     font-size: 1rem;
-    color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -45%);
+    color: #fff;
 }
 
-.socials span:last-child i {
+.socials li:last-child i {
     font-size: 1.2rem;
 }
 
-.socials span:hover {
+.socials li:hover {
     cursor: pointer;
     border-color: var(--bright-magenta);
 }
 
-.socials span:hover i {
+.socials li:hover i {
     color: var(--bright-magenta);
+
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: #fff;
+    margin-top: 1em;
+}
+
+.attribution a {
+    color: hsl(300, 100%, 71%);
+}
+
+@media only screen and (min-width: 575px) {
+    .container {
+        max-width: 450px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        max-width: 600px;
+
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    html {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        background-image: url('images/bg-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .container {
+        max-width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    main {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .logo {
+        width: 180px;
+    }
+
+    .illustration {
+        max-width: 55%;
+        margin-top: 4em;
+    }
+
+    .content {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        max-width: 440px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .description {
+        font-size: 15.5px;
+    }
+
+    footer {
+        text-align: right;
+    }
+
+    .socials li {
+        width: 35px;
+        height: 35px;
+    }
+
+    .socials i {
+        font-size: 1rem;
+    }
+
+    .socials li:last-child i {
+        font-size: 1.2rem;
+    }
+
+    button {
+        width: 160px;
+        padding: 15px;
+        font-size: .9rem;
+    }
 
 }
